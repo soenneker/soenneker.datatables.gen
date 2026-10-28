@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net11.0</TargetFramework>
+        <Features>$(Features);runtime-async=on</Features>
+        <Nullable>enable</Nullable>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Soenneker.DataTables.Dtos.Column" Version="11.0.40" />
+        <PackageReference Include="Soenneker.DataTables.Dtos.ServerSideRequest" Version="11.0.41" />
+        <PackageReference Include="Soenneker.Dtos.RequestDataOptions" Version="11.0.245" />
+        <PackageReference Include="Soenneker.Extensions.IQueryables" Version="11.0.235" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="5.9.0" />
+        <PackageReference Include="Soenneker.DataTables.Attributes.Column" Version="11.0.38" />
+        <PackageReference Include="Soenneker.DataTables.Attributes.Searchable" Version="11.0.37" />
+        <PackageReference Include="Soenneker.DataTables.Attributes.Orderable" Version="11.0.37" />
+        <PackageReference Include="Soenneker.Attributes.MapTo" Version="11.0.39" />
+        <PackageReference Include="Soenneker.Gen.EnumValues" Version="11.0.65" GeneratePathProperty="true" ExcludeAssets="all" PrivateAssets="all" />
+        <Reference Include="Soenneker.Gen.EnumValues" HintPath="$(PkgSoenneker_Gen_EnumValues)/analyzers/dotnet/cs/Soenneker.Gen.EnumValues.dll" />
+        <PackageReference Include="TUnit" Version="1.76.28" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\Soenneker.DataTables.Gen\Soenneker.DataTables.Gen.csproj" />
+    </ItemGroup>
+
+</Project>

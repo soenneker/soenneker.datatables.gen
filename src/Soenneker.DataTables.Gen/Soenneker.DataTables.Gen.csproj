@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <Platforms>AnyCPU</Platforms>
+        <NoWarn>$(NoWarn);1591;RS2008</NoWarn>
+        <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <DevelopmentDependency>true</DevelopmentDependency>
+        <IsRoslynComponent>true</IsRoslynComponent>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+        <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Description>Compile-time DataTables column mappings, permissions, and typed search expressions.</Description>
+        <Version Condition="'$(BUILD_VERSION)' == ''">11.0.0</Version>
+        <Version Condition="'$(BUILD_VERSION)' != ''">$(BUILD_VERSION)</Version>
+        <AssemblyName>Soenneker.DataTables.Gen</AssemblyName>
+        <PackageId>Soenneker.DataTables.Gen</PackageId>
+        <PackageTags>datatables gen source-generator roslyn search metadata aot datatablesgenerator internalgenerator csharp dotnet c# .net</PackageTags>
+        <Copyright>Copyright © 2026 Jake Soenneker</Copyright>
+        <Authors>Jake Soenneker</Authors>
+        <Company>https://soenneker.com</Company>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <IncludeSymbols>false</IncludeSymbols>
+        <IsPackable>true</IsPackable>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/soenneker/soenneker.datatables.gen</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/soenneker/soenneker.datatables.gen</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryBranch>main</RepositoryBranch>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageIcon>icon.png</PackageIcon>
+        <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+        <PackageReleaseNotes Condition="'$(PACKAGE_RELEASE_NOTES)' != ''">$(PACKAGE_RELEASE_NOTES)</PackageReleaseNotes>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+        <None Include="..\..\LICENSE" Pack="true" PackagePath="\" />
+        <None Include="..\..\icon.png" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="$(TargetPath)" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+        <None Include="$(TargetDir)$(AssemblyName).pdb" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" Condition="Exists('$(TargetDir)$(AssemblyName).pdb')" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Soenneker.DataTables.Dtos.Column" Version="11.0.40" PrivateAssets="all" />
+        <PackageReference Include="Soenneker.DataTables.Attributes.Column" Version="11.0.38" PrivateAssets="all" />
+        <PackageReference Include="Soenneker.DataTables.Attributes.Searchable" Version="11.0.37" PrivateAssets="all" />
+        <PackageReference Include="Soenneker.DataTables.Attributes.Orderable" Version="11.0.37" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="5.9.0" PrivateAssets="all" />
+    </ItemGroup>
+    <Target Name="IncludeAnalyzerDependencies" BeforeTargets="_GetPackageFiles" DependsOnTargets="ResolveReferences">
+        <ItemGroup>
+            <None Include="@(ReferenceCopyLocalPaths)"
+                  Condition="!$([System.String]::Copy('%(ReferenceCopyLocalPaths.Filename)').StartsWith('Microsoft.CodeAnalysis')) and '%(ReferenceCopyLocalPaths.Filename)' != 'System.Collections.Immutable' and '%(ReferenceCopyLocalPaths.Filename)' != 'System.Reflection.Metadata' and '%(ReferenceCopyLocalPaths.Filename)' != 'System.Text.Encoding.CodePages' and '%(ReferenceCopyLocalPaths.Extension)' == '.dll'"
+                  Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+        </ItemGroup>
+    </Target>
+    <Target Name="IncludeLocalAnalyzerDependencies" Condition="'$(IncludeLocalAnalyzerDependencies)' == 'true'" AfterTargets="GetTargetPathWithTargetPlatformMoniker" DependsOnTargets="ResolveReferences">
+        <ItemGroup>
+            <TargetPathWithTargetPlatformMoniker Include="@(ReferenceCopyLocalPaths)"
+                Condition="!$([System.String]::Copy('%(ReferenceCopyLocalPaths.Filename)').StartsWith('Microsoft.CodeAnalysis')) and '%(ReferenceCopyLocalPaths.Filename)' != 'System.Collections.Immutable' and '%(ReferenceCopyLocalPaths.Filename)' != 'System.Reflection.Metadata' and '%(ReferenceCopyLocalPaths.Filename)' != 'System.Text.Encoding.CodePages' and '%(ReferenceCopyLocalPaths.Extension)' == '.dll'" />
+        </ItemGroup>
+    </Target>
+</Project>
+
