@@ -20,7 +20,7 @@
         <PackageReference Include="Soenneker.Attributes.MapTo" Version="11.0.39" />
         <PackageReference Include="Soenneker.Gen.EnumValues" Version="11.0.65" GeneratePathProperty="true" ExcludeAssets="all" PrivateAssets="all" />
         <Reference Include="Soenneker.Gen.EnumValues" HintPath="$(PkgSoenneker_Gen_EnumValues)/analyzers/dotnet/cs/Soenneker.Gen.EnumValues.dll" />
-        <PackageReference Include="TUnit" Version="1.76.28" />
+        <PackageReference Include="TUnit" Version="1.76.45" />
     </ItemGroup>
 
     <ItemGroup>
