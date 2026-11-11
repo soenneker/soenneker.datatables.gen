@@ -15,7 +15,7 @@
         <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="5.9.0" />
         <PackageReference Include="Soenneker.DataTables.Attributes.Column" Version="11.0.38" />
         <PackageReference Include="Soenneker.DataTables.Attributes.Searchable" Version="11.0.37" />
-        <PackageReference Include="Soenneker.DataTables.Attributes.Orderable" Version="11.0.37" />
+        <PackageReference Include="Soenneker.DataTables.Attributes.Orderable" Version="11.0.38" />
         <PackageReference Include="Soenneker.Attributes.MapTo" Version="11.0.39" />
         <Reference Include="Soenneker.Gen.EnumValues" HintPath="$(PkgSoenneker_Gen_EnumValues)/analyzers/dotnet/cs/Soenneker.Gen.EnumValues.dll" />
         <PackageReference Include="TUnit" Version="1.83.0" />
