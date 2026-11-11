@@ -57,7 +57,7 @@
     <ItemGroup>
         <PackageReference Include="Soenneker.DataTables.Dtos.Column" Version="11.0.41" PrivateAssets="all" />
         <PackageReference Include="Soenneker.DataTables.Attributes.Column" Version="11.0.38" PrivateAssets="all" />
-        <PackageReference Include="Soenneker.DataTables.Attributes.Searchable" Version="11.0.37" PrivateAssets="all" />
+        <PackageReference Include="Soenneker.DataTables.Attributes.Searchable" Version="11.0.38" PrivateAssets="all" />
         <PackageReference Include="Soenneker.DataTables.Attributes.Orderable" Version="11.0.37" PrivateAssets="all" />
         <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="5.9.0" PrivateAssets="all" />
     </ItemGroup>
