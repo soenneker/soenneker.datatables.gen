@@ -11,14 +11,14 @@
     <ItemGroup>
         <PackageReference Include="Soenneker.DataTables.Dtos.Column" Version="11.0.42" />
         <PackageReference Include="Soenneker.DataTables.Dtos.ServerSideRequest" Version="11.0.43" />
-        <PackageReference Include="Soenneker.Extensions.IQueryables" Version="11.0.244" />
+        <PackageReference Include="Soenneker.Extensions.IQueryables" Version="11.0.245" />
         <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="5.9.0" />
         <PackageReference Include="Soenneker.DataTables.Attributes.Column" Version="11.0.39" />
         <PackageReference Include="Soenneker.DataTables.Attributes.Searchable" Version="11.0.38" />
         <PackageReference Include="Soenneker.DataTables.Attributes.Orderable" Version="11.0.38" />
         <PackageReference Include="Soenneker.Attributes.MapTo" Version="11.0.40" />
         <Reference Include="Soenneker.Gen.EnumValues" HintPath="$(PkgSoenneker_Gen_EnumValues)/analyzers/dotnet/cs/Soenneker.Gen.EnumValues.dll" />
-        <PackageReference Include="TUnit" Version="1.83.0" />
+        <PackageReference Include="TUnit" Version="1.83.8" />
     </ItemGroup>
 
     <ItemGroup>
