@@ -59,7 +59,7 @@
         <PackageReference Include="Soenneker.DataTables.Attributes.Column" Version="11.0.39" PrivateAssets="all" />
         <PackageReference Include="Soenneker.DataTables.Attributes.Searchable" Version="11.0.38" PrivateAssets="all" />
         <PackageReference Include="Soenneker.DataTables.Attributes.Orderable" Version="11.0.38" PrivateAssets="all" />
-        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="5.9.0" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="5.12.0" PrivateAssets="all" />
     </ItemGroup>
     <Target Name="IncludeAnalyzerDependencies" BeforeTargets="_GetPackageFiles" DependsOnTargets="ResolveReferences">
         <ItemGroup>
