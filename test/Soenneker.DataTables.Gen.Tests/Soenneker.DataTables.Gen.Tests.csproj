@@ -18,7 +18,7 @@
         <PackageReference Include="Soenneker.DataTables.Attributes.Orderable" Version="11.0.38" />
         <PackageReference Include="Soenneker.Attributes.MapTo" Version="11.0.40" />
         <Reference Include="Soenneker.Gen.EnumValues" HintPath="$(PkgSoenneker_Gen_EnumValues)/analyzers/dotnet/cs/Soenneker.Gen.EnumValues.dll" />
-        <PackageReference Include="TUnit" Version="1.83.8" />
+        <PackageReference Include="TUnit" Version="1.84.0" />
     </ItemGroup>
 
     <ItemGroup>
